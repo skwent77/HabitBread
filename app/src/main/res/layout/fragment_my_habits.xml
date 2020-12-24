@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appBackground"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView_habitlist_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/habitListTitle"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/textView_announcement"
+        app:layout_constraintTop_toBottomOf="@+id/textView_habitlist_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imageView_bakery_circle"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="당신의 미래는 깜깜하군요..!"
+        android:textStyle="bold"
+        android:textColor="@color/textBrownColor"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageView_bakery_circle"
+        app:layout_constraintTop_toTopOf="@+id/textView_habitlist_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/icon_bakery_circle"/>
+
+    <ImageView
+        android:id="@+id/imageView_bakery"
+        app:layout_constraintTop_toTopOf="@+id/imageView_bakery_circle"
+        app:layout_constraintStart_toStartOf="@+id/imageView_bakery_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_bakery_circle"
+        app:layout_constraintEnd_toEndOf="@id/imageView_bakery_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_bakery"/>
+
+    <TextView
+        android:id="@+id/textView_bakery"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_bakery_circle"
+        app:layout_constraintStart_toStartOf="@+id/imageView_bakery_circle"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_bakery_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="베이커리"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+    
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_announcement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_habitlist"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never" />
+
+            <include
+                android:id="@+id/layout_create_habit"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView_habitlist"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                layout="@layout/layout_add_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.habitbread.main.ui.fragment.Login"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_viewPager"
+            app:destination="@id/viewPager"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPager"
+        android:name="com.habitbread.main.ui.fragment.ViewPager"
+        android:label="fragment_viewpager"
+        tools:layout="@layout/fragment_viewpager" >
+        <action
+            android:id="@+id/action_viewPager_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/viewPager"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_viewPager_to_bakery"
+            app:destination="@id/bakery"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_viewPager_to_detail"
+            app:destination="@id/detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/slide_out_left">
+            <argument
+                android:name="habitId"
+                app:argType="integer"
+                android:defaultValue="-1"/>
+            <argument
+                android:name="habitName"
+                app:argType="string"
+                android:defaultValue=""/>
+            <argument
+                android:name="habitDescription"
+                app:argType="string"
+                app:nullable="true"/>
+        </action>
+        <action
+            android:id="@+id/action_viewPager_to_registrationBottomSheet"
+            app:destination="@id/registrationBottomSheet"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/bakery"
+        android:name="com.habitbread.main.ui.fragment.Bakery"
+        android:label="fragment_bakery"
+        tools:layout="@layout/fragment_bakery" />
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.habitbread.main.ui.fragment.Detail"
+        tools:layout="@layout/fragment_detail"
+        android:label="Detail" >
+        <action
+            android:id="@+id/action_detail_to_modificationBottomSheet"
+            app:destination="@id/modificationBottomSheet"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom" >
+            <argument
+                android:name="habitId"
+                app:argType="integer"
+                android:defaultValue="-1"/>
+            <argument
+                android:name="title"
+                app:argType="string"
+                android:defaultValue=""/>
+            <argument
+                android:name="description"
+                app:argType="string"
+                app:nullable="true"/>
+            <argument
+                android:name="dayOfWeek"
+                app:argType="string"
+                android:defaultValue=""/>
+            <argument
+                android:name="alarmTime"
+                app:argType="string"
+                app:nullable="true"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/registrationBottomSheet"
+        android:name="com.habitbread.main.ui.fragment.RegistrationBottomSheet"
+        tools:layout="@layout/fragment_registraion"
+        android:label="RegistrationBottomSheet" />
+    <fragment
+        android:id="@+id/modificationBottomSheet"
+        android:name="com.habitbread.main.ui.fragment.ModificationBottomSheet"
+        android:label="ModificationBottomSheet"
+        tools:layout="@layout/fragment_modification">
+        <action
+            android:id="@+id/action_modificationBottomSheet_to_viewPager"
+            app:destination="@id/viewPager"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/viewPager"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

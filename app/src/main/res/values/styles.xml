@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#553615</item>
+        <item name="colorPrimaryDark">#F5F4F1</item>
+        <item name="colorOnSurface">#303030</item>
+        <item name="colorSecondary">@color/appGreenColor</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="switchStyle">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <!-- Habit List theme -->
+    <style name="HabitListTheme" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!-- Bottom Sheet Dialog theme -->
+    <style name="bottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+    </style>
+
+    <!-- Alarm WeekDay theme -->
+    <style name="AlarmWeekDayTheme" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="android:shape">oval</item>
+    </style>
+
+    <!-- Alarm Chip Text theme -->
+    <style name="AlarmChipTextTheme" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Alarm Chip theme -->
+    <style name="AlarmChipTheme" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/selector_chip</item>
+        <item name="rippleColor">@color/appGreenColor</item>
+        <item name="chipCornerRadius">120dp</item>
+        <item name="chipMinTouchTargetSize">0dp</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">#787877</item>
+    </style>
+
+    <!-- Alarm switch theme -->
+    <style name="ThemeOverlay.App.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+        <item name="colorSurface">#ffffff</item>
+        <item name="colorOnSurface">#303030</item>
+        <item name="colorSecondary">@color/appGreenColor</item>
+    </style>
+
+    <!-- progress bar theme -->
+    <style name="MyProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorControlNormal">#ECE9E2</item>
+        <item name="colorControlActivated">#A67B58</item>
+        <item name="colorControlHighlight">#A67B58</item>
+        <item name="android:progressDrawable">@drawable/custom_progressbar</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+</resources>

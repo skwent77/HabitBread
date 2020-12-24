@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_modification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageView_close"
+        app:layout_constraintTop_toTopOf="@+id/textView_registration"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_close"/>
+
+    <TextView
+        android:id="@+id/textView_registration"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modificationTitle"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#726C68"/>
+
+    <ImageView
+        android:id="@+id/imageView_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView_registration"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_done"/>
+
+    <TextView
+        android:id="@+id/textView_title"
+        app:layout_constraintStart_toStartOf="@id/imageView_close"
+        app:layout_constraintTop_toBottomOf="@+id/textView_registration"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/newHabitName"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title"
+        app:layout_constraintStart_toStartOf="@+id/textView_title"
+        app:layout_constraintEnd_toEndOf="@id/imageView_done"
+        app:layout_constraintBottom_toTopOf="@id/textView_registration_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="#ffffff"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:boxStrokeColor="@color/checkedTrue"
+        app:hintTextColor="@color/checkedTrue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#D2CEC9"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/edittext_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_registration_description"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_name"
+        app:layout_constraintStart_toStartOf="@id/textView_title"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="@string/newHabitDescrition" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_description"
+        app:layout_constraintTop_toBottomOf="@+id/textView_registration_description"
+        app:layout_constraintStart_toStartOf="@id/textView_title"
+        app:layout_constraintBottom_toTopOf="@id/textView_alarm_day"
+        app:layout_constraintEnd_toEndOf="@id/imageView_done"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="#ffffff"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:boxStrokeColor="@color/checkedTrue"
+        app:hintTextColor="@color/checkedTrue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#D2CEC9"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textView_alarm_day"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_description"
+        app:layout_constraintStart_toStartOf="@+id/textView_title"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScrollView_alarm_day"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarmDayTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView_alarm_day"
+        app:layout_constraintTop_toBottomOf="@+id/textView_alarm_day"
+        app:layout_constraintStart_toStartOf="@+id/textView_alarm_day"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_done"
+        app:layout_constraintBottom_toTopOf="@id/textView_alarm_time"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:chipSpacingHorizontal="0dp"
+            app:singleSelection="false"
+            app:singleLine="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_mon"
+                android:tag="1"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="월"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_tue"
+                android:tag="2"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="화"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_wed"
+                android:tag="3"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="수"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_thu"
+                android:tag="4"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="목"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_fri"
+                android:tag="5"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="금"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_sat"
+                android:tag="6"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="토"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_sun"
+                android:tag="0"
+                style="@style/AlarmChipTheme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:checkable="false"
+                android:text="일"
+                android:textAlignment="center"
+                android:textColor="#787877"
+                android:textAppearance="@style/AlarmChipTextTheme" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView_alarm_time"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView_alarm_day"
+        app:layout_constraintBottom_toTopOf="@id/timepicker_alarm_time"
+        app:layout_constraintStart_toStartOf="@+id/textView_title"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarmTimeTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_alarm"
+        app:layout_constraintTop_toTopOf="@id/textView_alarm_time"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_done"
+        app:layout_constraintBottom_toBottomOf="@id/textView_alarm_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ThemeOverlay.App.Switch"
+        app:useMaterialThemeColors = "false"
+        android:checked="true"/>
+
+    <ru.ifr0z.timepickercompact.TimePickerCompact
+        android:id="@+id/timepicker_alarm_time"
+        app:layout_constraintTop_toBottomOf="@+id/textView_alarm_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearlayout_compare_lastmonth"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode = "spinner"/>
+
+    <TextView
+        android:id="@+id/textView_isAlarmChecked"
+        app:layout_constraintTop_toBottomOf="@+id/textView_alarm_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarmOff"
+        android:textSize="16sp"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_compare_lastmonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView_modify_delete_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="습관빵을 삭제하시려면 "
+            android:textColor="#A5A5A5"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/textView_modify_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여기"
+            android:textColor="#6D6D70"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/textView_modify_delete_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="를 눌러주세요"
+            android:textColor="#A5A5A5"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

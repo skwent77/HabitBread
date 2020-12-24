@@ -1,0 +1,59 @@
+<resources>
+    <!-- app name strings -->
+    <string name="app_name">습관빵</string>
+    <string name="app_name_dev">습관빵개발</string>
+
+    <!-- login strings -->
+    <string name="appTitle">습관빵</string>
+    <string name="appMainMent">당신의 습관을 구워보세요</string>
+
+    <!-- habit list strings -->
+    <string name="habitCreateTitle">습관 생성하기</string>
+    <string name="habitListTitle">나의 습관빵</string>
+
+    <!-- ranking strings -->
+    <string name="rankingTitle">랭킹</string>
+    <string name="totalRanking">당신은 %d 명 중에 %s 등입니다."</string>
+    <string name="currentBreadNum">현재 %d개</string>
+
+    <!-- create new habit strings -->
+    <string name="createNewHabitTitle">습관빵 만들기</string>
+    <string name="newHabitName">습관빵 이름</string>
+    <string name="newHabitDescrition">설명</string>
+    <string name="newHabitNameHint">제목을 적어주세요</string>
+    <string name="newHabitDescriptionHint">내용을 적어주세요</string>
+    <string name="alarmTimeTitle">알람</string>
+    <string name="alarmDayTitle">빵 굽는 날</string>
+    <string name="alarmOff">알람이 꺼져있습니다</string>
+
+    <!-- modify habit strings -->
+    <string name="modificationTitle">습관빵 수정하기</string>
+
+    <!-- bakery strings -->
+    <string name="bakeryTitle">베이커리</string>
+    <string name="level1">LV1</string>
+
+    <!-- detail strings -->
+    <string name="deleteleft">습관빵을 삭제하시려면 </string>
+    <string name="deleteHere"><u>여기</u></string>
+    <string name="deleteright">를 눌러주세요</string>
+    <string name="continueCountTitle">연속 횟수</string>
+    <string name="totalCountTitle">총 횟수</string>
+    <string name="commitButtonText">오늘의 빵 굽기</string>
+
+    <!-- account strings -->
+    <string name="turnOffAllAlarm">전체 알람 끄기</string>
+    <string name="changePrivateInfo">개인 정보 변경</string>
+    <string name="ask">문의하기</string>
+    <string name="deleteAccount">계정 삭제</string>
+    <string name="logOut">로그아웃</string>
+
+    <!-- fcm strings -->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <!-- account stringSet -->
+    <string name="percentage">%d%%</string>
+
+    <!-- detail stringSet -->
+    <string name="count">%d회</string>
+</resources>

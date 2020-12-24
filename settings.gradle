@@ -1,0 +1,2 @@
+rootProject.name='HabitBread'
+include ':app'

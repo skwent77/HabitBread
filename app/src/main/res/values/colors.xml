@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="checkedTrue">#80553615</color>
+    <color name="checkedFalse">#FFFFFF</color>
+    <color name="checkedTrueTransparency">#66553615</color>
+    <drawable name="checkedTrue">#80553615</drawable>
+    <drawable name="checkedFalse">#E2E2E2</drawable>
+
+    <!-- theme colors -->
+    <color name="appGreenColor">#4C7A65</color>
+    <color name="appBackground">#F5F4F1</color>
+    <color name="barGrayColor">#E2E1DD</color>
+    <color name="textBrownColor">#847C77</color>
+
+    <!-- habit list colors -->
+    <color name="colorHabitList">#F5F3ED</color>
+    <color name="transparency">#CCFFFFFF</color>
+    <color name="dotColor">#C94F4F</color>
+    <color name="addNewHabitBackground">#D2CFC9</color>
+
+    <!-- bread level colors -->
+    <color name="breadLevel1">#1A726655</color>
+    <color name="getBreadLevel1">#AD9C82</color>
+    <color name="getBreadLevel2">#A5BCB2</color>
+    <color name="getBreadLevel3">#EFC4AB</color>
+    <color name="getBreadLevel4">#D267BB</color>
+</resources>
+

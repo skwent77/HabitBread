@@ -1,0 +1,134 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.2"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.habitbread.main"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 3
+        versionName "1.1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            manifestPlaceholders = [
+                    appName : "@string/app_name"
+            ]
+        }
+
+        debug {
+            applicationIdSuffix '.dev'
+            manifestPlaceholders = [
+                    appName : "@string/app_name_dev"
+            ]
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions{
+        jvmTarget = "1.8"
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //kotlin dependencies
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
+    implementation "androidx.core:core-ktx:${rootProject.ext.coreKtxVersion}"
+
+    //android view dependencies
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraintLayoutVersion}"
+    implementation "com.google.android.material:material:${rootProject.ext.materialDesignVersion}"
+    implementation "androidx.legacy:legacy-support-v4:${rootProject.ext.legacySupportV4Version}"
+
+    //android lifecycle dependencies
+    implementation "androidx.lifecycle:lifecycle-extensions:${rootProject.ext.lifecycleExtensionsVersion}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:${rootProject.ext.lifecycleViewModelVersion}"
+    implementation "androidx.lifecycle:lifecycle-runtime:${rootProject.ext.lifecycleRunTimeVersion}"
+    implementation "androidx.lifecycle:lifecycle-livedata-core:${rootProject.ext.lifecycleLivedataCore}"
+
+    //retrofit dependencies
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit2Version}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit2ConverterGsonVersion}"
+    implementation "com.google.code.gson:gson:${rootProject.ext.GsonVersion}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okhttp3LoggingInterceptorVersion}"
+
+    //glide dependencies
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideCompilerVersion}"
+
+    //databinding dependencies
+    implementation "com.orhanobut:hawk:${rootProject.ext.hawkVersion}"
+    kapt "androidx.databinding:databinding-compiler-common:${rootProject.ext.databindingCompilerCommonVersion}"
+
+    //android test dependencies
+    testImplementation "junit:junit:${rootProject.ext.junitVersion}"
+    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.runnerVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoCoreVersion}"
+
+    //android recyclerview dependencies
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerviewVersion}"
+
+    //firebase dependencies
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    //calendar library dependencies
+    implementation "com.github.prolificinteractive:material-calendarview:${rootProject.ext.materialCalendarviewVersion}"
+
+    //fragment dependencies
+    implementation "androidx.fragment:fragment-ktx:${rootProject.ext.fragmentKtxVersion}"
+
+    //viewpager2 dependency
+    implementation "androidx.viewpager2:viewpager2:${rootProject.ext.viewpager2Version}"
+
+    //coroutine dependencies
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.kotlinxCoroutinesCoreVersion}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.ext.kotlinxCoroutinesAndroidVersion}"
+
+    //event bus dependencies
+    implementation "org.greenrobot:eventbus:${rootProject.ext.eventbusVersion}"
+
+    //google gsm dependencies
+    implementation "com.google.android.gms:play-services-auth:${rootProject.ext.playServicesAuthVersion}"
+
+    //time picker dependencies
+    implementation "com.github.ifr0z:timepickercompact:${rootProject.ext.timepickercompactVersion}"
+    implementation "org.conscrypt:conscrypt-android:${rootProject.ext.conscryptAndroidVersion}"
+
+    //android navigation dependencies
+    implementation "androidx.navigation:navigation-fragment-ktx:${rootProject.ext.navigationFragmentKtxVersion}"
+    implementation "androidx.navigation:navigation-ui-ktx:${rootProject.ext.navigationUiKtxVersion}"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:${rootProject.ext.navigationDynamicFeaturesFragmentVersion}"
+
+    // android animation interpolator dependencies
+    implementation "androidx.interpolator:interpolator:${rootProject.ext.interpolatorVersion}"
+
+}
