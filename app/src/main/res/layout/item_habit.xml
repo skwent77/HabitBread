@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/appBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/button_habit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view_divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:shapeAppearance="@style/HabitListTheme"
+        app:strokeWidth = "0dp"
+        android:backgroundTint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView_habitName"
+        app:layout_constraintTop_toTopOf="@+id/button_habit"
+        app:layout_constraintStart_toStartOf="@+id/button_habit"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test Title"
+        android:textSize="22sp"
+        android:textColor="#4A4646"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_description"
+        app:layout_constraintTop_toBottomOf="@+id/textView_habitName"
+        app:layout_constraintStart_toStartOf="@+id/textView_habitName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="test Description"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView_isToday"
+        app:layout_constraintTop_toTopOf="@+id/textView_habitName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="오늘"
+        android:textSize="14dp"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/imageView_dot"
+        app:layout_constraintBottom_toTopOf="@id/textView_isToday"
+        app:layout_constraintStart_toEndOf="@+id/textView_isToday"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/icon_dot" />
+
+    <ImageView
+        android:id="@+id/imageView_forward_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageView_dot"
+        app:layout_constraintVertical_bias="0.8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_forward_arrow"/>
+
+    <TextView
+        android:id="@+id/textView_Sun"
+        android:tag="0"
+        app:layout_constraintStart_toStartOf="@+id/textView_habitName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Mon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="일"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Mon"
+        android:tag="1"
+        app:layout_constraintStart_toEndOf="@+id/textView_Sun"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Tue"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="월"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Tue"
+        android:tag="2"
+        app:layout_constraintStart_toEndOf="@+id/textView_Mon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Wed"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="화"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Wed"
+        android:tag="3"
+        app:layout_constraintStart_toEndOf="@+id/textView_Tue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Thu"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="수"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Thu"
+        android:tag="4"
+        app:layout_constraintStart_toEndOf="@+id/textView_Wed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Fri"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="목"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Fri"
+        android:tag="5"
+        app:layout_constraintStart_toEndOf="@+id/textView_Thu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Sat"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="4dp"
+        android:text="금"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textView_Sat"
+        android:tag="6"
+        app:layout_constraintStart_toEndOf="@+id/textView_Fri"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginStart="4dp"
+        android:text="토"
+        android:textColor="@android:color/black"
+        android:background="@drawable/background_dayofweek_default"
+        android:gravity="center" />
+
+    <View
+        android:id="@+id/view_divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="3dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

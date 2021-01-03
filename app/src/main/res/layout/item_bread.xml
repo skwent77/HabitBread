@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/button_bread"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:shapeAppearance="@style/HabitListTheme"
+        android:backgroundTint="@android:color/white"
+        app:strokeWidth="0dp"/>
+
+    <TextView
+        android:id="@+id/textView_level"
+        app:layout_constraintTop_toTopOf="@+id/button_bread"
+        app:layout_constraintStart_toStartOf="@+id/button_bread"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_bread"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:text="@string/level1"
+        android:textColor="@android:color/white"/>
+
+    <ImageView
+        android:id="@+id/imageView_bread"
+        app:layout_constraintTop_toTopOf="@+id/button_bread"
+        app:layout_constraintStart_toStartOf="@+id/button_bread"
+        app:layout_constraintBottom_toBottomOf="@+id/button_bread"
+        app:layout_constraintEnd_toEndOf="@+id/button_bread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_question"/>
+
+    <TextView
+        android:id="@+id/textView_bread_name"
+        app:layout_constraintStart_toStartOf="@+id/button_bread"
+        app:layout_constraintBottom_toBottomOf="@+id/button_bread"
+        app:layout_constraintEnd_toEndOf="@+id/button_bread"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식빵"
+        android:textSize="16sp"
+        android:textColor="#1A726655"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

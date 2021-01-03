@@ -1,0 +1,100 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+ext {
+    //kotlin dependencies
+    appCompatVersion = "1.1.0"
+    coreKtxVersion = "1.3.0"
+
+    //android view dependencies
+    constraintLayoutVersion = "1.1.3"
+    materialDesignVersion = "1.3.0-alpha01"
+    legacySupportV4Version = "1.0.0"
+
+    //android lifecycle dependencies
+    lifecycleExtensionsVersion = "2.2.0"
+    lifecycleViewModelVersion = "2.2.0"
+    lifecycleRunTimeVersion = "2.2.0"
+    lifecycleLivedataCore = "2.2.0"
+
+    //retrofit dependencies
+    retrofit2Version = "2.9.0"
+    retrofit2ConverterGsonVersion = "2.9.0"
+    GsonVersion = "2.8.6"
+    okhttp3LoggingInterceptorVersion = "4.7.2"
+
+    //glide dependencies
+    glideVersion = "4.11.0"
+    glideCompilerVersion = "4.11.0"
+
+    //databinding dependencies
+    hawkVersion = "2.0.1"
+    databindingCompilerCommonVersion = "4.0.1"
+
+    //android test dependencies
+    junitVersion = "4.13"
+    runnerVersion = "1.0.2"
+    espressoCoreVersion = "3.0.2"
+
+    //android recyclerview dependencies
+    recyclerviewVersion = "1.1.0"
+
+    //calendar library dependencies
+    materialCalendarviewVersion = "2.0.1"
+
+    //fragment dependencies
+    fragmentKtxVersion = "1.2.5"
+
+    //viewpager2 dependency
+    viewpager2Version = "1.0.0"
+
+    //coroutine dependencies
+    kotlinxCoroutinesCoreVersion = "1.3.7"
+    kotlinxCoroutinesAndroidVersion = "1.3.4"
+
+    //event bus dependencies
+    eventbusVersion = "3.2.0"
+
+    //google gsm dependencies
+    playServicesAuthVersion = "18.1.0"
+
+    //time picker dependencies
+    timepickercompactVersion = "1.0"
+    conscryptAndroidVersion = "2.2.1"
+
+    //android navigation dependencies
+    navigationFragmentKtxVersion = "2.3.0"
+    navigationUiKtxVersion = "2.3.0"
+    navigationDynamicFeaturesFragmentVersion = "2.3.0"
+
+    //android animation interpolator dependencies
+    interpolatorVersion = "1.0.0"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
